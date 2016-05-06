@@ -1,7 +1,8 @@
 # Ember-data
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a fairly simple test of ember data, utilizing the [JSON-Placeholder](http://jsonplaceholder.typicode.com) api as a data source.
+
+Test site built onto [heroku](http://peaceful-sands-35567.herokuapp.com/) using [Tony Coconate's Ember CLI Heroku Buildpack](https://github.com/tonycoco/heroku-buildpack-ember-cli).
 
 ## Prerequisites
 
@@ -38,10 +39,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
