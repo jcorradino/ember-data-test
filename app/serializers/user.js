@@ -6,11 +6,18 @@ export default JSONAPISerializer.extend({
 	normalizeResponse: function(store, primaryModelClass, payload, id, requestType) {
 		var transformedData = [];
 		Ember.$(payload).each(function(id, record) {
-			record.user = record.userId;
-			var post = {};
-			post.id = record.id;
-			post.type = "post";
-			post.attributes = record;
+			var post = {
+				id: record.id,
+				type: "user",
+				attributes: {
+					name: record.name,
+					username: record.username,
+					email: record.email,
+					city: record.address.city,
+					website: record.website,
+					companyName: record.company.name
+				}
+			};
 			transformedData.push(post);
 		});
 		return this._super(store, primaryModelClass, {"data": transformedData}, id, requestType);
