@@ -14,8 +14,7 @@ export default JSONAPISerializer.extend({
 					username: record.username,
 					email: record.email,
 					city: record.address.city,
-					website: record.website,
-					companyName: record.company.name
+					website: record.website
 				}
 			};
 			transformedData.push(post);

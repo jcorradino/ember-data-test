@@ -7,7 +7,5 @@ export default Model.extend({
   username: attr('string'),
   email: attr('string'),
   city: attr('string'),
-  website: attr('string'),
-  companyName: attr('string'),
-	posts: hasMany('post')
+  website: attr('string')
 });

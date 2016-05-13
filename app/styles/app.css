@@ -1,0 +1,54 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	background: #faf4f1 url("http://emberjs.com/images/background-shades.svg") top center no-repeat;
+	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+}
+
+header {
+	min-width: 960px;
+	background: #dd6a58 url("http://emberjs.com/images/header.svg") top center no-repeat;
+	background-size: cover;
+	padding: 1rem 0;
+}
+
+	.headerBar {
+		height: 2.8rem;
+		width: 100%;
+		margin-top: 1rem;
+	}
+
+		.headerContainer {
+			width: 40%;
+			height: 2.8rem;
+			margin: 0 auto;
+		}
+
+.bodyContainer {
+	width: 40%;
+	background-color: #ffffff;
+	border-radius: 6px;
+	box-shadow: 0 1px #fff,inset -1px 1px 4px rgba(0,0,0,0.1);
+	margin: 20px auto 20px;
+	padding: 20px;
+}
+
+.post h2 {
+	text-transform: capitalize;
+	border-bottom: 1px dotted #ccc;
+	margin-bottom: 0px;
+}
+
+.post h4 {
+    margin: 4px;
+    opacity: 0.7;
+    font-size: 14px;
+}
+	.post h4 a {
+		color: #F23818;
+		text-decoration: none;
+	}
+
+.post p {
+	margin-bottom: 60px;
+}

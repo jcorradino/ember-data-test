@@ -1,3 +1,5 @@
 {{#each model.posts as |post|}}
-	{{show-post content=post authors=model.authors}}
+	{{show-post content=post class="post"}}
 {{/each}}
+
+{{!-- {{paginate-posts content=model.posts}} --}}

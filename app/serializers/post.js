@@ -4,15 +4,30 @@ import Ember from 'ember';
 export default JSONAPISerializer.extend({
 	isNewSerializerAPI: false,
 	normalizeResponse: function(store, primaryModelClass, payload, id, requestType) {
+		Array.prototype.shuffle = function() {
+			var i = this.length, j, temp;
+			if ( i == 0 ) return this;
+			while ( --i ) {
+				j = Math.floor( Math.random() * ( i + 1 ) );
+				temp = this[i];
+				this[i] = this[j];
+				this[j] = temp;
+			}
+			return this;
+		}
+		
 		var transformedData = [];
 		Ember.$(payload).each(function(id, record) {
-			record.user = record.userId;
+			record.authorkey = String(record.userId);
 			var post = {};
 			post.id = record.id;
 			post.type = "post";
 			post.attributes = record;
 			transformedData.push(post);
 		});
+
+		transformedData = transformedData.shuffle();
+
 		return this._super(store, primaryModelClass, {"data": transformedData}, id, requestType);
 	}
 });

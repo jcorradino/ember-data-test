@@ -5,5 +5,5 @@ import { belongsTo } from 'ember-data/relationships';
 export default Model.extend({
   title: attr('string'),
   body: attr('string'),
-  user: belongsTo('user')
+  authorkey: attr('string')
 });
