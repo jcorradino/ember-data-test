@@ -5,25 +5,6 @@ html, body {
 	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 }
 
-header {
-	min-width: 960px;
-	background: #dd6a58 url("http://emberjs.com/images/header.svg") top center no-repeat;
-	background-size: cover;
-	padding: 1rem 0;
-}
-
-	.headerBar {
-		height: 2.8rem;
-		width: 100%;
-		margin-top: 1rem;
-	}
-
-		.headerContainer {
-			width: 40%;
-			height: 2.8rem;
-			margin: 0 auto;
-		}
-
 .bodyContainer {
 	position: relative;
 	width: 40%;

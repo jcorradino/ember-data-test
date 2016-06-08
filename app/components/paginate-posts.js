@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 	store: Ember.inject.service(),
 
-	postCount: Ember.computed.alias('content.length'),
+	postCount: 0,
 	currentPage: Ember.computed(function(){
 		return 0;
 	}).property(),
@@ -47,15 +47,18 @@ export default Ember.Component.extend({
 			end = start + this.get('postsPerPage');
 
 		$('.loadingFrame').fadeIn('fast');
-
-		if (!this.get('content').isFulfilled) {
-			this.get('content').then(function(){
+		if (Object.keys(this.get('store').peekAll('post').get('content')).length === 0) {
+			Ember.run.later(function(){
 				$this.populatePosts(start,end,true);
-			});
+			}, 300);
 		} else {
+			var loadedPosts = this.get('store').peekAll('post').get('content'),
+				posts = [];
+
+			this.set('postCount', Object.keys(loadedPosts).length);
 
 			for (var i = start; i < end; i++) {
-				posts.push(this.get('store').peekRecord('post', i));
+				posts.push(loadedPosts.get(i));
 			}
 
 			this.set('posts', posts);

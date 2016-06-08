@@ -6,6 +6,5 @@ export default Model.extend({
   name: attr('string'),
   username: attr('string'),
   email: attr('string'),
-  city: attr('string'),
   website: attr('string')
 });

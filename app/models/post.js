@@ -3,7 +3,9 @@ import attr from 'ember-data/attr';
 import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
+  postId: attr('string'),
   title: attr('string'),
   body: attr('string'),
-  authorkey: attr('string')
+  user: attr(),
+  userId: belongsTo('User')
 });
